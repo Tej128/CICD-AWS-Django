@@ -1,0 +1,18 @@
+[Unit]
+Description=gunicorn daemon
+Requires=gunicorn.socket
+After=network.target
+[Service]
+User=ubuntu
+Group=www-data
+WorkingDirectory=/home/ubuntu/CICD
+ExecStart=/home/ubuntu/venv/bin/gunicorn \
+          --access-logfile \
+          --workers 3 \
+          --bind unix:/home/ubuntu/CICD/todoproject/gunicorn.sock \
+          todoproject.wsgi:application
+Restart=always
+
+       
+[Install]
+WantedBy=multi-user.target
