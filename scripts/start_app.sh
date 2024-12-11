@@ -1,6 +1,6 @@
 #!/usr/bin/bash 
 
-sed -i 's/\[]/\["54.91.116.188"]/' /home/ubuntu/todoproject/todoproject/settings.py
+sed -i 's/\[]/\["54.91.116.188"]/' /home/ubuntu/CICD-AWS-Django/todoproject/todoproject/settings.py
 
 python manage.py migrate 
 python manage.py makemigrations     
