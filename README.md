@@ -1,37 +1,48 @@
-# Django CI/CD Deployment with AWS CodePipeline and CodeDeploy
+# 🚀 Django CI/CD Deployment with AWS CodePipeline & CodeDeploy
 
-This project demonstrates how to deploy a Django application using AWS CodePipeline and CodeDeploy with a CI/CD pipeline. By automating the build and deployment process, we ensure efficient, error-free, and fast delivery of software changes to production.
+This project demonstrates how to automate the deployment of a Django application using a complete CI/CD pipeline powered by **AWS CodePipeline**, **CodeDeploy**, and **EC2**. It showcases modern DevOps practices and AWS infrastructure for streamlined delivery.
 
-## Highlights
-- 🚀 **CI/CD** simplifies software development and deployment, automating code testing, delivery, and deployment.
-- 💻 AWS services (CodePipeline, CodeDeploy) streamline the deployment process for Django applications.
-- 🔑 **IAM Roles** provide the necessary permissions for EC2 instances and CodeDeploy to work securely.
-- 🖥️ **Ubuntu Server** is used for hosting the Django application.
-- 📁 Configuration files for setting up the CI/CD pipeline are essential for automation.
-- 🔄 **CodePipeline** automates the build, test, and deployment stages for your Django project.
-- ✅ **Live Deployment** allows you to access the application through a public IP after successful deployment.
+---
 
-## Project Overview
-This repository contains the configuration for deploying a Django project to an EC2 instance using **AWS CodePipeline** and **AWS CodeDeploy**. The CI/CD pipeline automates the process, reducing the need for manual intervention during deployment, which ensures better software quality and faster releases.
+## 🔧 Tech Stack
 
-### Key Insights:
-- **CI/CD** ensures automated testing, building, and deployment, leading to fewer errors and faster releases.
-- **AWS CodePipeline** and **AWS CodeDeploy** manage the complexities of deploying Django applications.
-- **IAM Roles** are critical for securely assigning permissions to EC2 and CodeDeploy.
-- **Ubuntu Server** is recommended for hosting Django applications due to compatibility and ease of use.
-- The **Configuration Files** (e.g., `appspec.yml`, `buildspec.yml`, `gunicorn.service`) define the deployment pipeline, providing critical details to automate the build and deployment.
-- By using **CodePipeline**, the entire workflow—from code commit to deployment—is automated, ensuring continuous delivery.
-- After successful deployment, your Django application will be accessible via a public IP address.
+- **Django**
+- **AWS EC2**, **IAM**, **CodePipeline**, **CodeDeploy**
+- **Ubuntu Server**
+- **Gunicorn**, **Nginx**
+- **GitHub Integration**
 
-## Getting Started
+---
 
-### Prerequisites:
-- **AWS Account**: You need an AWS account to access services like CodePipeline, CodeDeploy, and EC2.
-- **Django Project**: The Django project should be set up and ready to deploy.
-- **IAM Roles**: Ensure proper IAM roles are created with necessary permissions for EC2 and CodeDeploy to function.
+## 🌟 Highlights
 
-### Step 1: Clone the Repository
-Clone this repository to your local machine:
+- 📦 **Automated CI/CD**: Build, test, and deploy stages triggered by code pushes.
+- 🔐 **IAM Roles**: Secure, role-based access for CodeDeploy and EC2 instances.
+- 🌐 **Live Deployment**: Public IP access to Django app after successful deploy.
+- 🛠️ **Configuration Driven**: Uses `buildspec.yml`, `appspec.yml`, and `gunicorn.service`.
+
+---
+
+## ⚙️ How It Works
+
+1. **Code Commit → GitHub**
+2. **CodePipeline** detects push → triggers build via `buildspec.yml`
+3. **CodeDeploy** deploys to EC2 using `appspec.yml`
+4. EC2 runs `gunicorn` + `nginx` for serving Django
+
+---
+
+## 🚀 Getting Started
+
+### 🔑 Prerequisites
+
+- AWS account
+- EC2 instance (Ubuntu)
+- Proper IAM roles for CodeDeploy, EC2
+- A Django project ready to deploy
+
+### 🧩 Clone the Repo
 
 ```bash
-git clone https://github.com/your-username/django-ci-cd-aws.git
+git clone https://github.com/Tej128/CICD-AWS-Django.git
+cd CICD-AWS-Django
